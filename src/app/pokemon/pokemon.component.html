@@ -2,11 +2,31 @@
   {{pokemon.species.name}}
 </div>
   <div class="col-md-2 border">
-    <img src="{{pokemon.sprites.front_default}}">
-    <a class="border-top d-block bg-danger text-white">
+    <img *ngIf="icon; else elseBlock" src="{{icon}}">
+    <ng-template #elseBlock><img src="{{pokemon.sprites.front_default}}"></ng-template>
+    <a class="border-top d-block" [ngClass]="activeClass===1?'bg-danger text-white':''"  (click)="changeSprite('front_default')">
       Front Default
     </a>
-    <a class="border-top d-block">
+    <a class="border-top d-block" [ngClass]="activeClass===2?'bg-danger text-white':''" (click)="changeSprite('back_default')">
       Back Default
     </a>
+    <a class="border-top d-block" *ngIf="pokemon.sprites.front_female" [ngClass]="activeClass===3?'bg-danger text-white':''" (click)="changeSprite('front_female')">
+      Front Female
+    </a>
+    <a class="border-top d-block" *ngIf="pokemon.sprites.back_female" [ngClass]="activeClass===4?'bg-danger text-white':''" (click)="changeSprite('back_female')">
+      Back Female
+    </a>
+    <a class="border-top d-block" *ngIf="pokemon.sprites.front_shiny" [ngClass]="activeClass===5?'bg-danger text-white':''" (click)="changeSprite('front_shiny')">
+      Front Shiny
+    </a>
+    <a class="border-top d-block" *ngIf="pokemon.sprites.back_shiny" [ngClass]="activeClass===6?'bg-danger text-white':''" (click)="changeSprite('back_shiny')">
+      Back Shiny
+    </a>
+    <a class="border-top d-block" *ngIf="pokemon.sprites.front_shiny_female" [ngClass]="activeClass===7?'bg-danger text-white':''" (click)="changeSprite('front_shiny_female')">
+      Front Shiny Female
+    </a>
+    <a class="border-top d-block" *ngIf="pokemon.sprites.back_shiny_female" [ngClass]="activeClass===8?'bg-danger text-white':''" (click)="changeSprite('back_shiny_female')">
+      Back Shiny Female
+    </a>
   </div>
+  
