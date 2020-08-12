@@ -9,18 +9,30 @@ import { HttpClientModule} from '@angular/common/http';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { PokemonService } from './pokemon.service';
 import { AbilityComponent } from './ability/ability.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatListModule} from '@angular/material/list';
+import { ToolbarBasicComponent } from './toolbar-basic/toolbar-basic.component';
+import {MatToolbarModule } from '@angular/material/toolbar';
+import {MatIconModule } from '@angular/material/icon';
+import {MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PokemonComponent,
-    AbilityComponent
+    AbilityComponent,
+    ToolbarBasicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [
     HomeService,
