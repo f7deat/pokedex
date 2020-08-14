@@ -15,6 +15,9 @@ import { ToolbarBasicComponent } from './toolbar-basic/toolbar-basic.component';
 import {MatToolbarModule } from '@angular/material/toolbar';
 import {MatIconModule } from '@angular/material/icon';
 import {MatButtonModule } from '@angular/material/button';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { PaginatorBasicComponent } from './paginator-basic/paginator-basic.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import {MatButtonModule } from '@angular/material/button';
     HomeComponent,
     PokemonComponent,
     AbilityComponent,
-    ToolbarBasicComponent
+    ToolbarBasicComponent,
+    PaginatorBasicComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import {MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule,
+    MatCardModule
   ],
   providers: [
     HomeService,
