@@ -1,8 +1,8 @@
-<mat-card class="example-card">
+<mat-card class="example-card" *ngIf="pokemon">
   <mat-card-header>
       <img *ngIf="icon; else elseBlock" src="{{icon}}" mat-card-avatar>
       <ng-template #elseBlock><img src="{{pokemon.sprites.front_default}}" mat-card-avatar></ng-template>
-    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-title>{{pokemon.name}}</mat-card-title>
     <mat-card-subtitle>Region: Kanto</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>

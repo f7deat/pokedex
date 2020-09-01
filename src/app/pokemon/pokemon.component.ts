@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
-import { PokemonService } from '../pokemon.service';
+import PokemonService from '../pokemon.service';
+import Pokemon from 'src/models/Pokemon';
 
 @Component({
   selector: 'app-pokemon',
@@ -15,12 +15,12 @@ export class PokemonComponent implements OnInit {
     private pokemonService: PokemonService
     ) {  }
 
-    pokemon: any = [];
+    pokemon: Pokemon;
     icon: string;
     activeClass = 1;
     getPokemon(): void {
       this.pokemonService.getPokemon(this.route.snapshot.params['id']).subscribe(
-        (x) => {
+        (x: Pokemon) => {
           this.pokemon = x;
         }
       );

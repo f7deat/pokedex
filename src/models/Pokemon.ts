@@ -1,4 +1,7 @@
-export class Pokemon {
-    id: number;
-    results: [];
+import Sprites from './Sprites';
+
+export default interface Pokemon {
+    height: number;
+    name: string;
+    sprites: Sprites;
 }

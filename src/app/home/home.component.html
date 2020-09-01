@@ -1,6 +1,13 @@
-<mat-selection-list #pokemon [multiple]="false">
-  <mat-list-option *ngFor="let item of home.results; let i = index" routerLink="/pokemon/{{item.name}}">
-    {{item.name}}
-  </mat-list-option>
-</mat-selection-list>
+<mat-grid-list cols="3">
+  <mat-grid-tile [colspan]="2">
+      hehe
+  </mat-grid-tile>
+  <mat-grid-tile [colspan]="1">
+    <mat-selection-list #pokemon [multiple]="false">
+      <mat-list-option *ngFor="let item of pokemons; let i = index" routerLink="/pokemon/{{item.name}}">
+        {{item.name}}
+      </mat-list-option>
+    </mat-selection-list>
+  </mat-grid-tile>
+</mat-grid-list>
 <app-paginator-basic></app-paginator-basic>

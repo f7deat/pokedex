@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../home.service';
-import { Pokemon } from 'src/models/Pokemon';
-import { Observable } from 'rxjs';
+import Results from 'src/models/Results';
+import Pokedex from 'src/models/Pokedex';
+import PokemonService from '../pokemon.service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +10,13 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  home: any = [];
-  constructor(private homeService: HomeService) { }
+  pokemons: Results[];
+
+  constructor(private pokemonService: PokemonService) { }
   getHomeData(): void {
-    this.homeService.listPokedex().subscribe(
-      (x) => {
-        this.home = x;
+    this.pokemonService.getPokedex().subscribe(
+      (x: Pokedex) => {
+        this.pokemons = x.results;
       }
     );
   }

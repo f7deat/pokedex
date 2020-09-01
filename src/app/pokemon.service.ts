@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import Pokedex from 'src/models/Pokedex';
+import Pokemon from 'src/models/Pokemon';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PokemonService {
-  private pokemonURL = 'https://pokeapi.co/api/v2/pokemon';
-  getPokemon(name: string): Observable<any> {
-    return this.http.get<any>(`${this.pokemonURL}/${name}`).pipe(
-      tap(rec => console.log(`${JSON.stringify(rec)}`)),
-      catchError(error => of([]))
-    );
+export default class PokemonService {
+  private _apiUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
+  
+  getPokedex(): Observable<Pokedex> {
+    return this.http.get<Pokedex>(this._apiUrl);
   }
-  constructor(
-    private http: HttpClient
-    ) {  }
+
+  getPokemon(name: string): Observable<Pokemon> {
+    return this.http.get<Pokemon>(`${this._apiUrl}${name}`);
+  }
+  constructor(private http: HttpClient) {  }
 }
