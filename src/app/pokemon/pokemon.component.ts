@@ -19,7 +19,7 @@ export class PokemonComponent implements OnInit {
     icon: string;
     activeClass = 1;
     getPokemon(): void {
-      this.pokemonService.getPokemon(this.route.snapshot.params['id']).subscribe(
+      this.pokemonService.getPokemonByName(this.route.snapshot.params['id']).subscribe(
         (x: Pokemon) => {
           this.pokemon = x;
         }

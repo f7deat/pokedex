@@ -12,10 +12,10 @@ export default interface Sprites {
 
 interface Other {
     dream_world: DreamWorld;
+    "official-artwork": OfficialArtwork;
 }
 
 interface DreamWorld {
-    "official-artwork": OfficialArtwork;
 }
 
 interface OfficialArtwork {

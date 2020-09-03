@@ -1,13 +1,14 @@
-<mat-grid-list cols="3">
-  <mat-grid-tile [colspan]="2">
-      hehe
+<div class="background-pokedex-tomato"></div>
+<div class="background-pokedex-orange"></div>
+<mat-grid-list cols="3" rowHeight="100%">
+  <mat-grid-tile [colspan]="2" *ngIf="pokemon">
+    <img [src]="artWork" />
   </mat-grid-tile>
   <mat-grid-tile [colspan]="1">
-    <mat-selection-list #pokemon [multiple]="false">
+    <mat-selection-list [multiple]="false" class="list-pokemon">
       <mat-list-option *ngFor="let item of pokemons; let i = index" routerLink="/pokemon/{{item.name}}">
         {{item.name}}
       </mat-list-option>
     </mat-selection-list>
   </mat-grid-tile>
 </mat-grid-list>
-<app-paginator-basic></app-paginator-basic>
