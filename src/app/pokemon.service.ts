@@ -22,5 +22,9 @@ export default class PokemonService {
     return this.http.get<Pokemon>(`${this._apiUrl}${id}`);
   }
 
+  getPokemonByUrl(url: string): Observable<Pokemon> {
+    return this.http.get<Pokemon>(`${url}`);
+  }
+
   constructor(private http: HttpClient) {  }
 }

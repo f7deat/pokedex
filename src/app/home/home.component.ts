@@ -11,7 +11,7 @@ import Pokemon from 'src/models/Pokemon';
 })
 export class HomeComponent implements OnInit {
 
-  pokemons: Results[];
+  pokemons: Pokemon[] = [];
   pokemon: Pokemon;
   artWork: string;
 
@@ -19,9 +19,19 @@ export class HomeComponent implements OnInit {
   getHomeData(): void {
     this.pokemonService.getPokedex().subscribe(
       (x: Pokedex) => {
-        this.pokemons = x.results;
+        x.results.forEach((i) => {
+          this.pokemonService.getPokemonByUrl(i.url).subscribe(
+            (y: Pokemon) => {
+              this.pokemons.push(y)
+            }
+          )
+        })
       }
     );
+  }
+
+  previewPokemon(name: string): void {
+    this.artWork = this.pokemons.find(x=>x.name === name).sprites.other["official-artwork"].front_default;
   }
 
   getPokemon(): void {
