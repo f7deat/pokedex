@@ -43,7 +43,7 @@
   .list-pokemon:hover::before {
     color: white;
     background-color: black;
-    width: 50%;
+    width: 60%;
     height: 100%;
     content: "";
     position: absolute;

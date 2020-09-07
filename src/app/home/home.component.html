@@ -4,11 +4,18 @@
   <mat-grid-tile [colspan]="2" *ngIf="pokemon">
     <img [src]="artWork" />
   </mat-grid-tile>
-  <mat-grid-tile [colspan]="1">
+  <mat-grid-tile [colspan]="1" class="overflow-y-scroll">
     <mat-list class="list-pokedex">
       <mat-list-item *ngFor="let item of pokemons; let i = index" (click)="previewPokemon(item.name)" class="list-pokemon">
         <div mat-list-icon><img [src]="item.sprites.front_default" class="list-sprites-icon"/></div> 
-        <div mat-line class="list-name">{{item.name}}</div>
+        <div mat-line class="list-name">
+          <span style="margin-right: 40%;">
+            NO.{{item.id}}
+          </span>
+           <span>
+            {{item.name}}
+          </span>
+        </div>
         <mat-icon mat-icon-button>donut_small</mat-icon>
       </mat-list-item>
     </mat-list>
