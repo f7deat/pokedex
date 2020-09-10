@@ -1,11 +1,6 @@
-.example-spacer {
-    flex: 1 1 auto;
-  }
-.project-name {
+.tan-toolbar {
+  background-color: black;
   color: white;
-  text-decoration: none;
-}
-.mat-toolbar-single-row {
   position: absolute;
   bottom: 0;
 }

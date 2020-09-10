@@ -9,15 +9,7 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import PokemonService from './pokemon.service';
 import { AbilityComponent } from './ability/ability.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatListModule} from '@angular/material/list';
 import { ToolbarBasicComponent } from './toolbar-basic/toolbar-basic.component';
-import {MatToolbarModule } from '@angular/material/toolbar';
-import {MatIconModule } from '@angular/material/icon';
-import {MatButtonModule } from '@angular/material/button';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import { PaginatorBasicComponent } from './paginator-basic/paginator-basic.component';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -25,21 +17,13 @@ import {MatGridListModule} from '@angular/material/grid-list';
     HomeComponent,
     PokemonComponent,
     AbilityComponent,
-    ToolbarBasicComponent,
-    PaginatorBasicComponent
+    ToolbarBasicComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatListModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    MatPaginatorModule,
-    MatCardModule,
-    MatGridListModule
+    BrowserAnimationsModule
   ],
   providers: [
     PokemonService

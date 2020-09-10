@@ -20,24 +20,29 @@
   }
 
   .list-pokedex {
-      margin-top: 24px;
       width: 100%;
   }
 
   .list-sprites-icon {
     max-width: 100%;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
   }
 
   .list-name {
     font-weight: bold !important;
+    width: 100%;
+  }
+
+  .list-pokemon {
+    position: relative;
   }
 
   .list-pokemon:hover {
     cursor: pointer;
     color: white;
     background-color: #f0501e;
-    border-radius: 23px;
   }
 
   .list-pokemon:hover::before {
@@ -49,5 +54,17 @@
     position: absolute;
     right: 0;
     clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
-    border-radius: 0 23px 23px 0;
+  }
+
+  .pokemon-name {
+    z-index: 1;
+  }
+
+  .pokemon-list-grid {
+    overflow: scroll;
+    height: 100vh;
+  }
+
+  .filter-black {
+    filter: grayscale(100%)
   }
