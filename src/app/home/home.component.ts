@@ -25,7 +25,8 @@ export class HomeComponent implements OnInit {
               this.pokemons.push(y)
             }
           )
-        })
+        });
+        console.log(this.pokemons)
       }
     );
   }

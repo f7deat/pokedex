@@ -1,27 +1,13 @@
-html, body { height: 100%; }
+html, body { 
+  height: 100%;
+  overflow: hidden;
+}
 body {
     margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background: rgb(255,219,243);
-    background: linear-gradient(140deg, rgba(255,219,243,1) 0%, rgba(255,255,255,1) 35%, rgba(228,246,246,1) 100%);
-    overflow: hidden;
+    background: #9966d2;
+    background: linear-gradient(140deg, #9966d2 0%, #FFFFFF 35%, #eff3fd 100%);
 }
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    background: #000; 
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: #fff;
-    border-radius: 4px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #eee; 
-  }
+
+img {
+  max-width: 100%;
+}

@@ -1,15 +1,15 @@
-<div class="background-pokedex-tomato"></div>
-<div class="background-pokedex-orange"></div>
-
-<div class="row bg-dark">
-  <div class="col-md-8"></div>
-  <div class="col-md-4">
-    <div class="p-2 filter-black"></div>
-  </div>
-</div>
-<div class="row">
-  <div *ngIf="pokemon" class="preview-image-grid col-md-8 h-100 d-flex align-items-center justify-content-center h-100">
-    <img [src]="artWork" />
+<div class="background-pokedex-1"></div>
+<div class="background-pokedex-2"></div>
+<div class="row h-100">
+  <div *ngIf="pokemon" class="preview-image-grid col-md-8">
+    <div class="pokemon-name">
+      NO.{{pokemon.id}}: {{pokemon.name}}
+    </div>
+    <div class="pokemon-art-wrapper h-100 d-flex align-items-center justify-content-center">
+      <div class="pokemon-art">
+        <img [src]="artWork" />
+      </div>
+    </div>
   </div>
   <div class="pokemon-list-grid col-md-4">
     <div class="list-pokedex">
@@ -20,7 +20,7 @@
             NO.{{item.id}}
           </div>
            <div class="d-flex w-100">
-            <div class="flex-grow-1 pokemon-name">{{item.name}}</div>
+            <div class="flex-grow-1 pokemon-list-name">{{item.name}}</div>
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-life-preserver" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M14.43 10.772l-2.788-1.115a4.015 4.015 0 0 1-1.985 1.985l1.115 2.788a7.025 7.025 0 0 0 3.658-3.658zM5.228 14.43l1.115-2.788a4.015 4.015 0 0 1-1.985-1.985L1.57 10.772a7.025 7.025 0 0 0 3.658 3.658zm9.202-9.202a7.025 7.025 0 0 0-3.658-3.658L9.657 4.358a4.015 4.015 0 0 1 1.985 1.985l2.788-1.115zm-8.087-.87L5.228 1.57A7.025 7.025 0 0 0 1.57 5.228l2.788 1.115a4.015 4.015 0 0 1 1.985-1.985zM8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm0-5a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
             </svg>

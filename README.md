@@ -15,3 +15,7 @@ Another simple way to deploy your Angular app is to use GitHub Pages.
 - On the GitHub project page, configure it to publish from the docs folder.
 
 You can see your deployed page at `https://<user_name>.github.io/<project_name>/`
+
+## Color
+
+- #EFF3FD, #4CACF3, #D6E7F8, #D8D8F8, #95DAF8, #9966D2, #8286DB, #A997CD

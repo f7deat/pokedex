@@ -1,7 +1,7 @@
 
-.background-pokedex-tomato {
+.background-pokedex-1 {
     clip-path: polygon(65% 0%, 100% 0%, 100% 100%, 40% 100%);
-    background-color: tomato;
+    background-color: #D6E7F8;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -9,9 +9,9 @@
     top: 0;
   }
   
-.background-pokedex-orange {
+.background-pokedex-2 {
     clip-path: polygon(75% 0%, 100% 0%, 100% 100%, 50% 100%);
-    background-color: #fa7246;
+    background-color: #D8D8F8;
     width: 100%;
     height: 100%;
     z-index: -1;
@@ -42,7 +42,7 @@
   .list-pokemon:hover {
     cursor: pointer;
     color: white;
-    background-color: #f0501e;
+    background-color: #4cacf3;
   }
 
   .list-pokemon:hover::before {
@@ -56,15 +56,33 @@
     clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
   }
 
-  .pokemon-name {
+  .pokemon-list-name {
     z-index: 1;
   }
 
   .pokemon-list-grid {
-    overflow: scroll;
+    overflow-y: scroll;
     height: 100vh;
   }
 
   .filter-black {
     filter: grayscale(100%)
+  }
+
+  .pokemon-art {
+    padding: 4rem;
+    background-color: #ffffff;
+    display: flex;
+    border-radius: 100%;
+    -webkit-box-shadow: 0px 60px 175px -28px rgba(153,102,210,0.4);
+    -moz-box-shadow: 0px 60px 175px -28px rgba(153,102,210,0.4);
+    box-shadow: 0px 60px 175px -28px rgba(153,102,210,0.4);
+  }
+
+  .pokemon-name {
+    font-weight: bold;
+    font-size: 2rem;
+    color: #FFF;
+    padding: 0 1rem;
+    text-transform: uppercase;
   }
