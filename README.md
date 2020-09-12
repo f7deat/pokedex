@@ -19,3 +19,7 @@ You can see your deployed page at `https://<user_name>.github.io/<project_name>/
 ## Color
 
 - #EFF3FD, #4CACF3, #D6E7F8, #D8D8F8, #95DAF8, #9966D2, #8286DB, #A997CD
+
+## Icon
+
+- Pokemon Type: [duiker101](https://github.com/duiker101/pokemon-type-svg-icons)

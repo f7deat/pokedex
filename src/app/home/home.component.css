@@ -85,4 +85,6 @@
     color: #FFF;
     padding: 0 1rem;
     text-transform: uppercase;
+    display: flex;
+    align-items: center;
   }

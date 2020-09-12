@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import Results from 'src/models/Results';
 import Pokedex from 'src/models/Pokedex';
 import PokemonService from '../pokemon.service';
 import Pokemon from 'src/models/Pokemon';
@@ -33,10 +32,24 @@ export class HomeComponent implements OnInit {
 
   previewPokemon(name: string): void {
     this.artWork = this.pokemons.find(x=>x.name === name).sprites.other["official-artwork"].front_default;
+    this.selectedPokemon(name);
   }
 
-  getPokemon(): void {
-    this.pokemonService.getPokemonById(1).subscribe(
+  getPokemonById(id: number): void {
+    this.pokemonService.getPokemonById(id).subscribe(
+      (x: Pokemon) => {
+        this.pokemon = x;
+        this.artWork = x.sprites.other["official-artwork"].front_default;
+      }
+    )
+  }
+
+  selectedPokemon(name: string): void {
+    this.pokemon = this.pokemons.find(x=>x.name === name);
+  }
+
+  getPokemonByName(name: string): void {
+    this.pokemonService.getPokemonByName(name).subscribe(
       (x: Pokemon) => {
         this.pokemon = x;
         this.artWork = x.sprites.other["official-artwork"].front_default;
@@ -46,7 +59,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.getHomeData();
-    this.getPokemon();
+    this.getPokemonById(1);
   }
 
 }

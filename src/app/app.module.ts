@@ -10,6 +10,7 @@ import PokemonService from './pokemon.service';
 import { AbilityComponent } from './ability/ability.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToolbarBasicComponent } from './toolbar-basic/toolbar-basic.component';
+import { PokemonNameComponent } from './home/pokemon-name.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ToolbarBasicComponent } from './toolbar-basic/toolbar-basic.component';
     HomeComponent,
     PokemonComponent,
     AbilityComponent,
-    ToolbarBasicComponent
+    ToolbarBasicComponent,
+    PokemonNameComponent
   ],
   imports: [
     BrowserModule,
