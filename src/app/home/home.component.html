@@ -1,44 +1,52 @@
-<div class="background-pokedex-1"></div>
-<div class="background-pokedex-2"></div>
-<div class="row h-100">
-  <div *ngIf="pokemon" class="preview-image-grid col-md-8">
-    <div class="pokemon-name">
-      <div *ngFor="let item of pokemon.types" class="d-flex">
-        <pokemon-name [type]="item.type.name"></pokemon-name>
+<div class="row g-0 flex-grow-1">
+    <div *ngIf="pokemon" class="preview-image-grid col-8">
+      <div class="bg-white d-flex align-items-center p-2">
+        <div *ngFor="let item of pokemon.types" class="d-flex px-1">
+          <pokemon-name [type]="item.type.name"></pokemon-name>
+        </div>
+        <div class="px-2 fw-bold">NO.{{pokemon.id}}: {{pokemon.name}}</div>
       </div>
-      NO.{{pokemon.id}}: {{pokemon.name}}
+      <div class="pokemon-art-wrapper h-100">
+        <div class="row h-100">
+          <div class="col-8 h100 d-flex align-items-center justify-content-center">
+            <div class="pokemon-art">
+              <img [src]="artWork" />
+            </div>
+          </div>
+          <div class="col-4 h100 align-items-center d-none">
+            <div class="stat-name">HP</div>
+            <div class="progress" style="background-color: #95DAF8;">
+              <div class="progress-bar" role="progressbar" style="width: 15%; background-color: #9966D2;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: 30%; background-color: #8286DB;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" style="width: 20%; background-color: #A997CD;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="pokemon-art-wrapper h-100">
-      <div class="row h-100">
-        <div class="col-md-8 h100 d-flex align-items-center justify-content-center">
-          <div class="pokemon-art">
-            <img [src]="artWork" />
+    <div class="pokemon-list-grid col-4">
+      <div class="p-2">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="keyword...">
+          <span class="input-group-text"><span class="material-icons">search</span></span>
+        </div>
+      </div>
+      <div class="list-pokedex bg-white rounded px-2">
+        <div *ngFor="let item of pokemons; let i = index" (click)="previewPokemon(item.name)" class="list-pokemon d-flex align-items-center">
+          <img [src]="item.sprites.front_default" class="list-sprites-icon"/>
+          <div class="list-name d-flex">
+            <div style="width: 70%;">
+              NO.{{item.id}}
+            </div>
+             <div class="d-flex w-100">
+              <div class="flex-grow-1 pokemon-list-name">{{item.name}}</div>
+            </div>
           </div>
         </div>
-        <div class="col-md-4 h100 align-items-center d-none">
-          <div class="stat-name">HP</div>
-          <div class="progress" style="background-color: #95DAF8;">
-            <div class="progress-bar" role="progressbar" style="width: 15%; background-color: #9966D2;" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar" role="progressbar" style="width: 30%; background-color: #8286DB;" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="progress-bar" role="progressbar" style="width: 20%; background-color: #A997CD;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-        </div>
+      </div>
+      <div class="bg-white border-top py-1 d-flex justify-content-between px-2">
+        <button class="btn btn-primary" type="button">Previous</button>
+        <button class="btn btn-primary" type="button" (click)="nextPage()">Next</button>
       </div>
     </div>
   </div>
-  <div class="pokemon-list-grid col-md-4">
-    <div class="list-pokedex">
-      <div *ngFor="let item of pokemons; let i = index" (click)="previewPokemon(item.name)" class="list-pokemon d-flex align-items-center">
-        <img [src]="item.sprites.front_default" class="list-sprites-icon"/>
-        <div class="list-name d-flex">
-          <div style="width: 70%;">
-            NO.{{item.id}}
-          </div>
-           <div class="d-flex w-100">
-            <div class="flex-grow-1 pokemon-list-name">{{item.name}}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>

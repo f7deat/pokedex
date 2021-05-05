@@ -9,8 +9,10 @@ import { PokemonComponent } from './pokemon/pokemon.component';
 import PokemonService from './pokemon.service';
 import { AbilityComponent } from './ability/ability.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToolbarBasicComponent } from './toolbar-basic/toolbar-basic.component';
 import { PokemonNameComponent } from './home/pokemon-name.component';
+import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
+import PokemonTypeService from './pokemon-type.service';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,9 @@ import { PokemonNameComponent } from './home/pokemon-name.component';
     HomeComponent,
     PokemonComponent,
     AbilityComponent,
-    ToolbarBasicComponent,
-    PokemonNameComponent
+    PokemonNameComponent,
+    PokemonTypeComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,8 @@ import { PokemonNameComponent } from './home/pokemon-name.component';
     BrowserAnimationsModule
   ],
   providers: [
-    PokemonService
+    PokemonService,
+    PokemonTypeService
   ],
   bootstrap: [AppComponent]
 })

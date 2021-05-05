@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ToolbarBasicComponent } from './toolbar-basic.component';
+import { PokemonTypeComponent } from './pokemon-type.component';
 
-describe('ToolbarBasicComponent', () => {
-  let component: ToolbarBasicComponent;
-  let fixture: ComponentFixture<ToolbarBasicComponent>;
+describe('PokemonTypeComponent', () => {
+  let component: PokemonTypeComponent;
+  let fixture: ComponentFixture<PokemonTypeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ToolbarBasicComponent ]
+      declarations: [ PokemonTypeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ToolbarBasicComponent);
+    fixture = TestBed.createComponent(PokemonTypeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

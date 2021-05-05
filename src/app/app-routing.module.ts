@@ -3,12 +3,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { PokemonComponent } from './pokemon/pokemon.component';
 import { HomeComponent } from './home/home.component';
 import { AbilityComponent } from './ability/ability.component';
+import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'pokemon/:id', component: PokemonComponent },
-  { path: 'ability', component: AbilityComponent }
+  { path: 'ability', component: AbilityComponent },
+  { path: 'type/:id', component: PokemonTypeComponent }
 ];
 
 @NgModule({

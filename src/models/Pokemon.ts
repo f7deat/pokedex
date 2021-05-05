@@ -5,5 +5,6 @@ export default interface Pokemon {
     height: number;
     name: string;
     sprites: Sprites;
-    types: Types
+    types: Types;
+    url: string;
 }

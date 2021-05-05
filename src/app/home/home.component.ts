@@ -13,10 +13,11 @@ export class HomeComponent implements OnInit {
   pokemons: Pokemon[] = [];
   pokemon: Pokemon;
   artWork: string;
+  resource: any;
 
   constructor(private pokemonService: PokemonService) { }
-  getHomeData(): void {
-    this.pokemonService.getPokedex().subscribe(
+  getHomeData(url: string): void {
+    this.pokemonService.getPokedex(url).subscribe(
       (x: Pokedex) => {
         x.results.forEach((i) => {
           this.pokemonService.getPokemonByUrl(i.url).subscribe(
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
           )
         });
         console.log(this.pokemons)
+        this.resource = x;
       }
     );
   }
@@ -57,8 +59,12 @@ export class HomeComponent implements OnInit {
     )
   }
 
+  nextPage(): void {
+    this.getHomeData(this.resource.next)
+  }
+
   ngOnInit() {
-    this.getHomeData();
+    this.getHomeData('');
     this.getPokemonById(1);
   }
 

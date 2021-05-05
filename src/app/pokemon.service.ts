@@ -10,7 +10,11 @@ import Pokemon from 'src/models/Pokemon';
 export default class PokemonService {
   private _apiUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
   
-  getPokedex(): Observable<Pokedex> {
+  getPokedex(next: string): Observable<Pokedex> {
+    if(next)
+    {
+      return this.http.get<Pokedex>(next);
+    }
     return this.http.get<Pokedex>(this._apiUrl);
   }
 
