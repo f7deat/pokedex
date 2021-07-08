@@ -8,7 +8,7 @@
       </div>
       <div class="pokemon-art-wrapper h-100">
         <div class="row h-100">
-          <div class="col-8 h100 d-flex align-items-center justify-content-center">
+          <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="pokemon-art">
               <img [src]="artWork" />
             </div>
@@ -25,9 +25,9 @@
       </div>
     </div>
     <div class="pokemon-list-grid col-4">
-      <div class="p-2">
+      <div class="p-2 bg-white">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="keyword...">
+          <input type="text" class="form-control bg-light" placeholder="keyword...">
           <span class="input-group-text"><span class="material-icons">search</span></span>
         </div>
       </div>
@@ -44,9 +44,8 @@
           </div>
         </div>
       </div>
-      <div class="bg-white border-top py-1 d-flex justify-content-between px-2">
-        <button class="btn btn-primary" type="button">Previous</button>
-        <button class="btn btn-primary" type="button" (click)="nextPage()">Next</button>
+      <div class="bg-white border-top py-1 d-flex justify-content-center px-2">
+        <button class="btn btn-primary btn-block" type="button" (click)="nextPage()">View more...</button>
       </div>
     </div>
   </div>

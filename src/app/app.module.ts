@@ -13,6 +13,8 @@ import { PokemonNameComponent } from './home/pokemon-name.component';
 import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
 import PokemonTypeService from './pokemon-type.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import AbilityDetailsComponent from './ability/ability-details.component';
+import { TypeComponent } from './type/type.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AbilityComponent,
     PokemonNameComponent,
     PokemonTypeComponent,
-    SidebarComponent
+    SidebarComponent,
+    AbilityDetailsComponent,
+    TypeComponent
   ],
   imports: [
     BrowserModule,

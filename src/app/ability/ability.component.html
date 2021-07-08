@@ -1,5 +1,7 @@
-<div class="list-group rounded-0">
-  <a class="list-group-item font-weight-bold text-dark" *ngFor="let item of ability.results; let i = index" routerLink="pokemon/{{item.name}}">
-      <img src="https://img.icons8.com/ios-filled/16/000000/instinct-pokemon.png"> {{item.name}}
-  </a>
+<div class="p-4">
+  <div class="list-group rounded-0">
+    <a class="list-group-item font-weight-bold text-dark" *ngFor="let item of ability?.results; let i = index" routerLink="details/{{item.name}}">
+        <img src="https://img.icons8.com/ios-filled/16/000000/instinct-pokemon.png"> {{item.name}}
+    </a>
+  </div>
 </div>

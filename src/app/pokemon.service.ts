@@ -8,27 +8,33 @@ import Pokemon from 'src/models/Pokemon';
   providedIn: 'root'
 })
 export default class PokemonService {
-  private _apiUrl: string = 'https://pokeapi.co/api/v2/pokemon/';
+  private _apiUrl: string = 'https://pokeapi.co/api/v2';
   
   getPokedex(next: string): Observable<Pokedex> {
     if(next)
     {
       return this.http.get<Pokedex>(next);
     }
-    return this.http.get<Pokedex>(this._apiUrl);
+    return this.http.get<Pokedex>(`${this._apiUrl}/pokemon`);
   }
 
   getPokemonByName(name: string): Observable<Pokemon> {
-    return this.http.get<Pokemon>(`${this._apiUrl}${name}`);
+    return this.http.get<Pokemon>(`${this._apiUrl}/pokemon/${name}`);
   }
 
   getPokemonById(id: number): Observable<Pokemon> {
-    return this.http.get<Pokemon>(`${this._apiUrl}${id}`);
+    return this.http.get<Pokemon>(`${this._apiUrl}/pokemon/${id}`);
   }
 
   getPokemonByUrl(url: string): Observable<Pokemon> {
     return this.http.get<Pokemon>(`${url}`);
   }
+
+  getTypeDetail = (id: string) => this.http.get(`${this._apiUrl}/type/${id}`)
+  
+  getAbilityDetail = (id: string) => this.http.get(`${this._apiUrl}/ability/${id}`)
+
+  getType = () => this.http.get(`${this._apiUrl}/type`)
 
   constructor(private http: HttpClient) {  }
 }

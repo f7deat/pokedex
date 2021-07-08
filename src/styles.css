@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 html, body { 
   height: 100%;
   overflow: hidden;
   background-color: var(--bs-light);
+  font-family: "Poppins", sans-serif;
 }
 
 .btn-link:hover {
@@ -10,6 +12,10 @@ html, body {
 
 img {
   max-width: 100%;
+}
+
+input:focus, input.form-control:focus {
+  box-shadow: none;
 }
 
 .icon {
@@ -113,3 +119,34 @@ img {
   background: #539DDF;
   box-shadow: 0 0 20px #539DDF;
 }
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.form-control, .input-group-text {
+  border: none;
+  background-color: var(--bs-light);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--bs-dark); 
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+

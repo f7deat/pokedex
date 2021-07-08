@@ -1,0 +1,9 @@
+<div class="p-4">
+   <div class="p-4 bg-white rounded">
+    <div class="d-flex justify-content-end mb-2">Total: {{type?.count}}</div>
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action"
+            *ngFor="let item of type?.results">{{item.name}}</button>
+    </div>
+   </div>
+</div>
